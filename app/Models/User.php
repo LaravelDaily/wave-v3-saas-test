@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use Wave\User as WaveUser;
 use Illuminate\Notifications\Notifiable;
 use Wave\Traits\HasProfileKeyValues;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends WaveUser
 {
@@ -40,10 +41,10 @@ class User extends WaveUser
         'remember_token',
     ];
 
-    protected static function boot()
+    protected static function boot(): void
     {
         parent::boot();
-        
+
         // Listen for the creating event of the model
         static::creating(function ($user) {
             // Check if the username attribute is empty
@@ -66,5 +67,15 @@ class User extends WaveUser
             // Assign the default role
             $user->assignRole( config('wave.default_user_role', 'registered') );
         });
+    }
+
+    public function projects(): HasMany
+    {
+        return $this->hasMany(Project::class);
+    }
+
+    public function tasks(): HasMany
+    {
+        return $this->hasMany(Task::class);
     }
 }
