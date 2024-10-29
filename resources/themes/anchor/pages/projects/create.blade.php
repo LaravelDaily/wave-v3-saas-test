@@ -2,7 +2,7 @@
     use function Laravel\Folio\{middleware, name};
     use Livewire\Attributes\Validate;
     use Livewire\Volt\Component;
-    middleware('auth');
+    middleware('subscribed');
     name('projects.create');
 
     new class extends Component

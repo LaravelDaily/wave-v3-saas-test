@@ -56,7 +56,7 @@ new class extends Component {
                         @foreach($tasks as $task)
                             <tr>
                                 <td class="px-4 py-2">{{ $task->name }}</td>
-                                <td class="px-4 py-2">{{ $task->project->name }}</td>
+                                <td class="px-4 py-2">{{ $task->project->name ?? '-' }}</td>
                                 <td class="px-4 py-2">
                                     <a href="/project/edit/{{ $task->id }}" class="mr-2 text-blue-500 hover:underline">Edit</a>
                                     <button wire:click="deleteProject({{ $task->id }})" class="text-red-500 hover:underline">Delete</button>

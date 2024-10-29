@@ -5,7 +5,7 @@ use function Laravel\Folio\{middleware, name};
 use App\Models\Project;
 use Livewire\Volt\Component;
 
-middleware('auth');
+middleware('subscribed');
 name('projects');
 
 new class extends Component {
