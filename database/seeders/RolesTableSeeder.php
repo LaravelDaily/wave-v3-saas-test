@@ -41,24 +41,6 @@ class RolesTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'guard_name' => 'web',
-                'name' => 'basic',
-                'description' => 'This is the basic plan role. This role is usually associated with a user who has subscribed to the basic plan.',
-                'created_at' => '2017-11-21 16:23:22',
-                'updated_at' => '2017-11-21 16:23:22',
-            ),
-            3 =>
-            array (
-                'id' => 4,
-                'guard_name' => 'web',
-                'name' => 'premium',
-                'description' => 'This is the premium plan role. This role is usually associated with a user who has subscribed to the premium plan.',
-                'created_at' => '2018-07-03 05:03:21',
-                'updated_at' => '2018-07-03 17:28:44',
-            ),
-            4 =>
-            array (
-                'id' => 5,
-                'guard_name' => 'web',
                 'name' => 'pro',
                 'description' => 'This is the pro plan role. This role is usually associated with a user who has subscribed to the pro plan.',
                 'created_at' => '2018-07-03 16:27:16',
