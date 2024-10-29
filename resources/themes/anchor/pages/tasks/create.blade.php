@@ -14,6 +14,13 @@ new class extends Component {
 
     public int $project_id;
 
+    public function mount(): void
+    {
+        if (auth()->user()->hasRole('free') && auth()->user()->tasks()->count() == 10) {
+            $this->redirect(route('limit'));
+        }
+    }
+
     public function with(): array
     {
         return [
