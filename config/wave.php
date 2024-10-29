@@ -25,7 +25,7 @@ return [
 	'show_docs' => env('WAVE_DOCS', true),
     'demo' => env('WAVE_DEMO', false),
     'dev_bar' => env('WAVE_BAR', false),
-	'default_user_role' => 'registered',
+	'default_user_role' => ['registered', 'free'],
 
 	'billing_provider' => env('BILLING_PROVIDER', 'stripe'),
 

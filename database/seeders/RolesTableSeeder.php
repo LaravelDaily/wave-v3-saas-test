@@ -45,6 +45,15 @@ class RolesTableSeeder extends Seeder
                 'description' => 'This is the pro plan role. This role is usually associated with a user who has subscribed to the pro plan.',
                 'created_at' => '2018-07-03 16:27:16',
                 'updated_at' => '2018-07-03 17:28:38',
+            ),
+            3 =>
+            array (
+                'id' => 4,
+                'guard_name' => 'web',
+                'name' => 'free',
+                'description' => 'This is the free plan role. This role is associated with a user after registration.',
+                'created_at' => '2018-07-03 16:27:16',
+                'updated_at' => '2018-07-03 17:28:38',
             )
         ));
 

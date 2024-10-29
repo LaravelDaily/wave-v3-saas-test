@@ -30,6 +30,19 @@ class PlansTableSeeder extends Seeder
                 'created_at' => '2018-07-03 16:30:43',
                 'updated_at' => '2018-08-22 22:26:19',
             ),
+            1 =>
+            array (
+                'id' => 2,
+                'name' => 'Free',
+                'description' => 'Limited access',
+                'features' => '10 Tasks',
+                'role_id' => 4,
+                'default' => 1,
+                'monthly_price' => '0',
+                'yearly_price' => '0',
+                'created_at' => '2018-07-03 16:30:43',
+                'updated_at' => '2018-08-22 22:26:19',
+            ),
         ));
     }
 }
