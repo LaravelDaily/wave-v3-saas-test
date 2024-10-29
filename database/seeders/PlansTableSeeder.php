@@ -22,7 +22,7 @@ class PlansTableSeeder extends Seeder
                 'id' => 1,
                 'name' => 'Pro',
                 'description' => 'Gain access to our pro features with the pro plan.',
-                'features' => 'Pro Feature Example 1, Pro Feature Example 2, Pro Feature Example 3, Pro Feature Example 4',
+                'features' => 'Unlimited Tasks, Unlimited Projects',
                 'role_id' => 3,
                 'default' => 0,
                 'monthly_price' => '9.99',
