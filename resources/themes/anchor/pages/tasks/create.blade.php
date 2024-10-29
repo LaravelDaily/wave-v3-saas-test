@@ -25,7 +25,7 @@ new class extends Component {
     {
         return [
             'name'       => ['required', 'min:3', 'max:255'],
-            'project_id' => [Rule::requiredIf(auth()->user()->subscribedToPlan('Pro')), 'nullable', 'integer', 'exists:projects,id'],
+            'project_id' => [Rule::requiredIf(auth()->user()->hasRole('pro')), 'nullable', 'integer', 'exists:projects,id'],
         ];
     }
 
@@ -69,15 +69,15 @@ new class extends Component {
 
             <div class="mt-4">
                 <label for="project_id" class="block mb-2 text-sm font-medium text-gray-700">Project</label>
-                <select id="project_id" name="project_id" wire:model="project_id" @disabled(! auth()->user()->subscribedToPlan('Pro')) class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:opacity-50">
+                <select id="project_id" name="project_id" wire:model="project_id" @disabled(! auth()->user()->hasRole('pro')) class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:opacity-50">
                     <option>-- SELECT PROJECT --</option>
                     @foreach($projects as $id => $project)
                         <option value="{{ $id }}">{{ $project }}</option>
                     @endforeach
                 </select>
-                @notsubscriber
+                @hasrole('pro')
                     <a href="/settings/subscription" class="text-sm text-gray-400 hover:underline mt-2">Only for Premium members</a>
-                @endnotsubscriber
+                @endhasrole
                 @error('project_id') <span class="text-xs text-red-500">{{ $message }}</span> @enderror
             </div>
 

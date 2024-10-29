@@ -32,7 +32,7 @@
                 <div class="flex flex-col justify-start items-center px-4 space-y-1.5 w-full h-full text-slate-600 dark:text-zinc-400">
                     <x-app.sidebar-link href="/dashboard" icon="phosphor-house" :active="Request::is('dashboard')">Dashboard</x-app.sidebar-link>
 
-                    @subscribed('Pro')
+                    @hasrole('pro')
                         <x-app.sidebar-link :href="route('projects')" icon="phosphor-scroll" :active="Request::is('projects')">Projects</x-app.sidebar-link>
                     @else
                         <x-app.sidebar-link href="/settings/subscription" icon="phosphor-scroll" :active="Request::is('projects')">
@@ -43,7 +43,7 @@
                                 </x-filament::badge>
                             </div>
                         </x-app.sidebar-link>
-                    @endsubscribed
+                    @endhasrole
                     <x-app.sidebar-link :href="route('tasks')" icon="phosphor-kanban" :active="Request::is('tasks')">Tasks</x-app.sidebar-link>
                 </div>
             </div>
